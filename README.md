@@ -20,7 +20,7 @@ yarn add pikchr-typescript            # Alternative with yarn
 import { pikchr } from 'pikchr-typescript';
 
 async function logSvg() {
-  const result = await pikchr('box "Hello world!');
+  const result = await pikchr('box "Hello world!"');
   if (result.svg) {
     console.log(result.svg);
   } else if (result.errorAsHtml) {
@@ -43,10 +43,10 @@ This should print:
 - [Pikchr](https://pikchr.org/)
 - [PickrShow](https://pikchr.org/home/pikchrshow)
 
-## Built
+## Build
 
 1. Copy the file [`pikchr.c`](https://pikchr.org/home/file?name=pikchr.c&ci=tip) from the Pikchr Fossil repository.
 2. Install [`emscripten`](https://emscripten.org/)
-3. Run `emcc -s EXPORTED_FUNCTIONS='["_pikchr"]' -s EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' -s MODULARIZE pikchr.c` to generate a new `a.out.js` and `a.out.wasm`.
+3. Run `emcc -s EXPORTED_FUNCTIONS='["_pikchr"]' -s EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' -s MODULARIZE=1 pikchr.c` to generate a new `a.out.js` and `a.out.wasm`.
 
 You can use [`tsdx`](https://github.com/formium/tsdx) commands like `yarn start`, `yarn test`, `yarn build` to build the rest of the project.
