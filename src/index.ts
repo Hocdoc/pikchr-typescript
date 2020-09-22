@@ -1,4 +1,5 @@
-const factory = require('./a.out.js');
+const factory = require('../src/a.out.js');
+
 let pik: any;
 
 export interface PikchrResult {
